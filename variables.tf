@@ -6,5 +6,7 @@ locals {
 }
 
 variable "force_destroy" {
-  type = bool
+  type        = bool
+  default     = true
+  description = "Whether to force deletion of the S3 bucket during infrastructure destruction. Valid value can be true or false."
 }
