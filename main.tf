@@ -1,10 +1,9 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket        = "pp-bucket1-${local.region}-${local.account_id}"
   force_destroy = var.force_destroy
 }
 
 resource "aws_s3_bucket_acl" "bucket" {
-  bucket = aws_s3_bucket.bucket1.id
+  bucket = aws_s3_bucket.bucket.id
   acl    = "private"
 }
 
