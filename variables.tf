@@ -6,5 +6,5 @@ locals {
 }
 
 variable "force_destroy" {
-  type = boolean
+  type = bool
 }
