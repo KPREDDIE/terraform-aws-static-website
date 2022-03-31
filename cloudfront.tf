@@ -99,7 +99,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     }
   } */
 
-  tags {
+  tags = {
     Name       = var.tag_Name
     sitecode   = var.tag_sitecode
     department = vat.tag_department

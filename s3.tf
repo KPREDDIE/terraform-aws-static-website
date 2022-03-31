@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "bucket" {
   force_destroy = var.s3_force_destroy
 
-  tags {
+  tags = {
     Name       = var.tag_Name
     sitecode   = var.tag_sitecode
     department = vat.tag_department
