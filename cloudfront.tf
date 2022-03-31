@@ -92,12 +92,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   price_class = var.cloudfront_price_class
 
-  /* restrictions {
+  restrictions {
     geo_restriction {
-      restriction_type = "whitelist"
-      locations        = ["US", "CA", "GB", "DE"]
+      restriction_type = "none"  # "whitelist" "blacklist"
+      /* locations        = ["US", "CA", "GB", "DE"] */
     }
-  } */
+  }
 
   tags = {
     Name       = var.tag_Name
