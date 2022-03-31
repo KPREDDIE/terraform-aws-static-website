@@ -4,10 +4,10 @@ resource "aws_s3_bucket" "bucket" {
   tags = {
     Name       = var.tag_Name
     sitecode   = var.tag_sitecode
-    department = vat.tag_department
-    team       = vat.tag_team
-    tier       = vat.tag_tier
-    costcenter = vat.tag_costcenter
+    department = var.tag_department
+    team       = var.tag_team
+    tier       = var.tag_tier
+    costcenter = var.tag_costcenter
   }
 }
 
