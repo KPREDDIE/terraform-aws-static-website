@@ -1,8 +1,12 @@
 data "aws_caller_identity" "current" {}
-data "aws_region" "current" {}
 locals {
   account_id = data.aws_caller_identity.current.account_id
-  region     = data.aws_region.current.name
+}
+
+variable "region" {
+  type        = string
+  default     = "us-east-1"
+  description = "Working region."
 }
 
 variable "tag_Name" {
@@ -33,6 +37,12 @@ variable "tag_tier" {
 variable "tag_costcenter" {
   type        = string
   description = "Which cost center the project is attached to."
+}
+
+variable "user_force_destroy" {
+  type        = bool
+  default     = true
+  description = "Whether to force deletion of the IAM user during infrastructure destruction. Valid value can be true or false."
 }
 
 variable "s3_force_destroy" {

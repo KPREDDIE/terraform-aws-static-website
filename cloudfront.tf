@@ -94,18 +94,9 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   restrictions {
     geo_restriction {
-      restriction_type = "none"  # "whitelist" "blacklist"
+      restriction_type = "none" # "whitelist" "blacklist"
       /* locations        = ["US", "CA", "GB", "DE"] */
     }
-  }
-
-  tags = {
-    Name       = var.tag_Name
-    sitecode   = var.tag_sitecode
-    department = var.tag_department
-    team       = var.tag_team
-    tier       = var.tag_tier
-    costcenter = var.tag_costcenter
   }
 
   viewer_certificate {
