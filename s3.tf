@@ -1,14 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
   force_destroy = var.s3_force_destroy
-
-  tags = {
-    Name       = var.tag_Name
-    sitecode   = var.tag_sitecode
-    department = var.tag_department
-    team       = var.tag_team
-    tier       = var.tag_tier
-    costcenter = var.tag_costcenter
-  }
 }
 
 resource "aws_s3_bucket_acl" "bucket" {
