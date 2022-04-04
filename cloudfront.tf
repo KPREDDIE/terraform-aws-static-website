@@ -1,5 +1,5 @@
 resource "aws_cloudfront_origin_access_identity" "oai" {
-  comment = var.tag_Name
+  comment = aws_s3_bucket.bucket.id
 }
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   enabled             = true
   is_ipv6_enabled     = true
-  comment             = var.tag_Name
+  comment             = aws_s3_bucket.bucket.id
   default_root_object = "index.html"
 
   /* logging_config {
